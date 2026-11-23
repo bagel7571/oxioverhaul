@@ -10,7 +10,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.oxiditsu.oxioverhaul.oxioverhaul;
 import net.oxiditsu.oxioverhaul.registry.OxiBlocks;
 
-@EventBusSubscriber(modid = oxioverhaul.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = oxioverhaul.MODID, value = Dist.CLIENT)
 public final class OxiClientTintSources {
     private OxiClientTintSources() {}
 
