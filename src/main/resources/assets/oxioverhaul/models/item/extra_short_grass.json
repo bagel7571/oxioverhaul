@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "oxioverhaul:block/extra_short_grass"
-  }
-}
