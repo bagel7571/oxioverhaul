@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oxioverhaul:block/extra_short_grass"
+  }
+}

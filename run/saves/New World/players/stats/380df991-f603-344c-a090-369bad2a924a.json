@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1482,
+      "minecraft:walk_one_cm": 2279,
+      "minecraft:total_world_time": 1556,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 227,
+      "minecraft:crouch_one_cm": 23,
+      "minecraft:sneak_time": 10,
+      "minecraft:play_time": 1482,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 1482,
+      "minecraft:drop": 4
+    },
+    "minecraft:picked_up": {
+      "minecraft:short_grass": 2,
+      "oxioverhaul:extra_short_grass": 2
+    },
+    "minecraft:used": {
+      "minecraft:grass_block": 13,
+      "oxioverhaul:extra_short_grass": 18,
+      "minecraft:short_grass": 17
+    },
+    "minecraft:dropped": {
+      "minecraft:short_grass": 2,
+      "oxioverhaul:extra_short_grass": 2
+    }
+  },
+  "DataVersion": 5023
+}
