@@ -1,0 +1,28 @@
+--------------------------------------------------------------------------------
+
+Command-Line:
+ - C:\Users\bagel7571\.jdks\temurin-25.0.5\bin\java.exe
+ - --sun-misc-unsafe-memory-access=allow
+ - -jar
+ - C:\Users\bagel7571\.gradle\caches\modules-2\files-2.1\io.codechicken\DiffPatch\2.0.0.36\5b32f9baa0c0371c0dc80a3b88794960af0c6b44\DiffPatch-2.0.0.36-all.jar
+ - C:\Users\bagel7571\.gradle\caches\neoformruntime\intermediate_results\patch_061f50176620e63a2b0e6fa4a9ac5ed7bfb9422f_output.zip
+ - ./patches
+ - --patch
+ - --archive
+ - ZIP
+ - --output
+ - ./output.zip
+ - --log-level
+ - WARN
+ - --mode
+ - OFFSET
+ - --archive-rejects
+ - ZIP
+ - --reject
+ - ./outputRejects.zip
+ - --base-path-prefix
+ - a/
+ - --modified-path-prefix
+ - b/
+--------------------------------------------------------------------------------
+

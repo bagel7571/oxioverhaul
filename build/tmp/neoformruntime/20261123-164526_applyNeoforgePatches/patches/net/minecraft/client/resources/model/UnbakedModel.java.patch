@@ -1,0 +1,26 @@
+--- a/net/minecraft/client/resources/model/UnbakedModel.java
++++ b/net/minecraft/client/resources/model/UnbakedModel.java
+@@ -8,8 +_,10 @@
+ import net.neoforged.api.distmarker.OnlyIn;
+ import org.jspecify.annotations.Nullable;
+ 
++import net.neoforged.neoforge.client.extensions.UnbakedModelExtension;
++
+ @OnlyIn(Dist.CLIENT)
+-public interface UnbakedModel {
++public interface UnbakedModel extends UnbakedModelExtension {
+     String PARTICLE_TEXTURE_REFERENCE = "particle";
+ 
+     default @Nullable Boolean ambientOcclusion() {
+@@ -58,6 +_,11 @@
+ 
+         public boolean lightLikeBlock() {
+             return this == SIDE;
++        }
++
++        /// Neo: {@return the serialized name of this lighting type}
++        public String getSerializedName() {
++            return this.name;
+         }
+     }
+ }

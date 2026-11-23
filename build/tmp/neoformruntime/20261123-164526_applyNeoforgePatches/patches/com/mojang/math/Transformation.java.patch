@@ -1,0 +1,39 @@
+--- a/com/mojang/math/Transformation.java
++++ b/com/mojang/math/Transformation.java
+@@ -14,7 +_,9 @@
+ import org.joml.Vector3fc;
+ import org.jspecify.annotations.Nullable;
+ 
+-public final class Transformation {
++import net.neoforged.neoforge.common.extensions.ITransformationExtension;
++
++public final class Transformation implements ITransformationExtension {
+     private static final Vector3fc ZERO_TRANSLATION = new Vector3f();
+     private static final Vector3fc UNIT_SCALE = new Vector3f(1.0F, 1.0F, 1.0F);
+     private static final Quaternionfc ZERO_ROTATION = new Quaternionf();
+@@ -36,6 +_,8 @@
+     private @Nullable Quaternionfc leftRotation;
+     private @Nullable Vector3fc scale;
+     private @Nullable Quaternionfc rightRotation;
++    /// Neo: stores the normal matrix extracted from the composed transformation matrix
++    private org.joml.@Nullable Matrix3f normalTransform = null;
+     public static final Transformation IDENTITY = Util.make(() -> {
+         Transformation identity = new Transformation(new Matrix4f());
+         identity.translation = ZERO_TRANSLATION;
+@@ -155,6 +_,16 @@
+     @Override
+     public int hashCode() {
+         return Objects.hash(this.matrix);
++    }
++
++    /// Neo: {@return the normal matrix of this transformation}
++    public org.joml.Matrix3fc getNormalMatrix() {
++        if (this.normalTransform == null) {
++            this.normalTransform = new org.joml.Matrix3f(this.matrix);
++            this.normalTransform.invert();
++            this.normalTransform.transpose();
++        }
++        return this.normalTransform;
+     }
+ 
+     public Transformation slerp(Transformation that, float progress) {
