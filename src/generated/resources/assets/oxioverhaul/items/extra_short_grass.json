@@ -1,6 +1,13 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "oxioverhaul:item/extra_short_grass"
+    "model": "oxioverhaul:item/extra_short_grass",
+    "tints": [
+      {
+        "type": "minecraft:grass",
+        "temperature": 0.5,
+        "downfall": 1.0
+      }
+    ]
   }
 }
