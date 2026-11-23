@@ -20,16 +20,16 @@ public final class OxiBlocks {
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(oxioverhaul.MODID);
 
-    // BushBlock gives this plant the same replaceable, non-solid and support-checking
-    // behavior as vanilla short grass. Copying its properties keeps its physical settings.
-    public static final DeferredBlock<BushBlock> MEADOW_GRASS = BLOCKS.registerBlock(
-            "meadow_grass",
+    // Match vanilla short grass behavior and physical properties.
+    // This is registered only as a block/item; it is not added to world-generation features.
+    public static final DeferredBlock<BushBlock> EXTRA_SHORT_GRASS = BLOCKS.registerBlock(
+            "extra_short_grass",
             BushBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)
     );
 
-    public static final DeferredItem<?> MEADOW_GRASS_ITEM =
-            ITEMS.registerSimpleBlockItem(MEADOW_GRASS);
+    public static final DeferredItem<?> EXTRA_SHORT_GRASS_ITEM =
+            ITEMS.registerSimpleBlockItem(EXTRA_SHORT_GRASS);
 
     public static void register(IEventBus modEventBus) {
         BLOCKS.register(modEventBus);
@@ -39,7 +39,7 @@ public final class OxiBlocks {
 
     private static void addToCreativeTab(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
-            event.accept(MEADOW_GRASS_ITEM);
+            event.accept(EXTRA_SHORT_GRASS_ITEM);
         }
     }
 }
