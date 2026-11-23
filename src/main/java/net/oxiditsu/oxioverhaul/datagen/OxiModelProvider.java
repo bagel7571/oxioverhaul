@@ -16,16 +16,20 @@ public final class OxiModelProvider extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        // Generates the crossed plant blockstate/model and a flat, generated-style inventory model.
-        blockModels.createCrossBlockWithDefaultItem(
+        // Generate the crossed, biome-tinted plant block without registering a default item model.
+        blockModels.createCrossBlock(
                 OxiBlocks.EXTRA_SHORT_GRASS.get(),
                 BlockModelGenerators.PlantType.TINTED
         );
 
-        // Match vanilla short grass: tint the flat item icon with the grass colormap too.
+        // Generate the flat item texture model, then register its item definition with grass tint.
+        Identifier itemModel = blockModels.createFlatItemModelWithBlockTexture(
+                OxiBlocks.EXTRA_SHORT_GRASS.get().asItem(),
+                OxiBlocks.EXTRA_SHORT_GRASS.get()
+        );
         blockModels.registerSimpleTintedItemModel(
                 OxiBlocks.EXTRA_SHORT_GRASS.get(),
-                Identifier.fromNamespaceAndPath(oxioverhaul.MODID, "item/extra_short_grass"),
+                itemModel,
                 new GrassColorSource(0.5F, 1.0F)
         );
     }
